@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .container {
+            position: relative;
+          max-width: 50%;
+            margin: 0 auto;
+        }
+
+        #player {
+            width: 100%;
+        }
+
+        .custom-controls {
+            position: absolute;
+            bottom: 0;
+            left: 300px;
+          top: 50%;
+          height: 5%;
+          width: 5%;
+          background-color: rgba(0, 0, 0, 0.5);
+           border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <video id="player">
+            <source type="video/mp4" src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4">
+        </video>
+        <div class="custom-controls">
+            <button class="play-button" onclick="playPause()"><span id="button">PLAY</span></button>
+        </div>
+    </div>
+
+    <script>
+        var player = document.getElementById('player');
+        var button = document.getElementById('button');
+
+        function playPause() {
+            if (player.paused) {
+                player.play();
+                button.innerHTML = "PAUSE";
+              
+            } else {
+                player.pause();
+                button.innerHTML = "PLAY";
+            }
+        }
+    </script>
+</body>
+</html>
